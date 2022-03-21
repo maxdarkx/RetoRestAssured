@@ -24,8 +24,8 @@ public class LoginServiceStepDefinition extends ServiceSetUp {
     private ReadJsonFileCredentials data;
 
     //login exitoso
-    @Given("el usuario esta en la pagina de inicio de sesion con el correo de ususario {string} y la contraseña {string}")
-    public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_ususario_y_la_contraseña(String user, String password) {
+    @Given("el usuario esta en la pagina de inicio de sesion con el correo de ususario {string} y la contrasena {string}")
+    public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_ususario_y_la_contrasena(String user, String password) {
         try {
             data = new ReadJsonFileCredentials(user, password);
             generalSetup();
@@ -69,8 +69,8 @@ public class LoginServiceStepDefinition extends ServiceSetUp {
     }
 
     //login: Olvido el password
-    @Given("el usuario esta en la pagina de inicio de sesion con el correo de usuario {string} sin contraseña")
-    public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_usuario_sin_contraseña(String user) {
+    @Given("el usuario esta en la pagina de inicio de sesion con el correo de usuario {string} sin contrasena")
+    public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_usuario_sin_contrasena(String user) {
         try {
             data = new ReadJsonFileCredentials(user, "");
             generalSetup();
