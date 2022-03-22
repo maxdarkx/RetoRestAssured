@@ -1,6 +1,6 @@
-package com.juancarlosmaya.stepdefinition;
+package com.juancarlosmaya.stepdefinition.loginservice;
 
-import com.juancarlosmaya.stepdefinition.setup.services.ServiceSetUp;
+import com.juancarlosmaya.setup.ServiceSetUp;
 import com.juancarlosmaya.util.ReadJsonFileCredentials;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,7 +27,7 @@ public class LoginServiceStepDefinition extends ServiceSetUp {
     @Given("el usuario esta en la pagina de inicio de sesion con el correo de ususario {string} y la contrasena {string}")
     public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_ususario_y_la_contrasena(String user, String password) {
         try {
-            data = new ReadJsonFileCredentials(user, password);
+            data = new ReadJsonFileCredentials(user, password,1);
             generalSetup();
             request = given()
                     .log()
@@ -72,7 +72,7 @@ public class LoginServiceStepDefinition extends ServiceSetUp {
     @Given("el usuario esta en la pagina de inicio de sesion con el correo de usuario {string} sin contrasena")
     public void el_usuario_esta_en_la_pagina_de_inicio_de_sesion_con_el_correo_de_usuario_sin_contrasena(String user) {
         try {
-            data = new ReadJsonFileCredentials(user, "");
+            data = new ReadJsonFileCredentials(user, "",1);
             generalSetup();
             request = given()
                     .log()
