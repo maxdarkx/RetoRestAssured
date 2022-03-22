@@ -53,8 +53,10 @@ public class UpdateServiceStepDefinition extends ServiceSetUp {
     public void el_usuario_recibe_un_codigo_de_respuesta_exitoso_y_una_estructura_con_sus_datos_de_usuario() {
         try {
             response.then()
+                    .log()
+                    .all()
                     .statusCode(HttpStatus.SC_OK)
-                    .body("job",notNullValue());
+                    .body("name",notNullValue(),"job", notNullValue());
         }
         catch (Exception e)
         {
